@@ -19,9 +19,6 @@ class APIService: NSObject {
         case failure
     }
     
-    private static let apiKey = "e4bc3c619491174a8469fe64cb6dc7ea"
-    var cityName = "Zagreb"
-    
     func fetchWeather(for id: Int, completion: @escaping (APIResult) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
             if let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?id=\(id)&appid=\(API.key)&units=metric") {
